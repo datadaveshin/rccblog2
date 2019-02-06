@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     if @post.comments.create(comment.params)
       redirect_to @post, notice: 'Comment was successfully created.'
     else
-      redirect_to @post, alert: 'Error creating comment.'
+      redirect_to @post, alert: "the following errors occurred #{@post.errors.inspect}"
     end
   end
 
