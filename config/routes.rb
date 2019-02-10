@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :posts do
-    resources :commments, only: :create
+    resources :comments, only: :create
   end
 
   root 'posts#index'
