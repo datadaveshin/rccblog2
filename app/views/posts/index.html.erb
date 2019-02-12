@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+  <h1>Welcome to RCC Blog</h1>
 
-<% @posts.each do | post | %>
+  <% @posts.each do | post | %>
   <h2><%= link_to(post.title, post) %></h2>
   <p><i><%= friendly_date(post.created_at) %></i></p>
   <p><%= post.body %></p>
@@ -10,8 +11,12 @@
     <%= link_to('Edit', edit_post_path(post)) %>
     <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?' } %>
   </p>
-<% end %>
+  <% end %>
 
-<br>
+  <br>
 
-<%= link_to 'New Post', new_post_path %>
+  <%= link_to 'New Post', new_post_path %>
+
+  <br>
+  <br>
+</div>
