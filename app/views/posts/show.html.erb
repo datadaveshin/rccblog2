@@ -1,16 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h2><%= @post.title %></h2>
-<p><%= @post.body %></p>
+  <h2><%= @post.title %></h2>
+  <p><%= @post.body %></p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
 
-<h3>Comments</h3>
-<%= render @post.comments %>
+  <h3>Comments</h3>
+  <%= render @post.comments %>
 
-<h4>New Comment</h4>
-<%= form_for [@post, @post.comments.build] do | f | %>
+  <h4>New Comment</h4>
+  <%= form_for [@post, @post.comments.build] do | f | %>
   <div class="field">
     <%= f.label :author %><br>
     <%= f.text_field :author %>
@@ -19,7 +20,12 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+</div>
